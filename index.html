@@ -17,57 +17,52 @@
       color: #212121;
     }
 
-    /* Matrix-style header */
-    .matrix-header {
-      position: relative;
-      height: 300px;
-      background-color: black;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    header {
+      background: #0d47a1;
+      color: white;
+      padding: 80px 20px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    .matrix-header h1 {
-      color: #00ff90;
-      font-size: 3.5em;
+    header h1 {
+      font-size: 3.2em;
+      margin-bottom: 10px;
+      position: relative;
       z-index: 2;
-      text-shadow: 0 0 15px #00ff90;
+      text-shadow: 0 0 10px #1e88e5;
     }
 
-    .matrix-bg {
+    header p {
+      font-size: 1.2em;
+      position: relative;
+      z-index: 2;
+    }
+
+    .binary-stream {
       position: absolute;
       top: 0;
       left: 0;
-      height: 100%;
       width: 100%;
+      height: 100%;
       z-index: 1;
       overflow: hidden;
+      opacity: 0.2;
     }
 
-    .matrix-row {
+    .digit {
       position: absolute;
-      top: -100%;
-      width: 20px;
-      animation: drop 5s linear infinite;
-      color: #00ff90;
+      color: #ffffff;
       font-family: monospace;
       font-size: 1.2em;
+      animation: fall linear infinite;
     }
 
-    .matrix-row:nth-child(odd) {
-      animation-duration: 6s;
-    }
-
-    .matrix-row:nth-child(even) {
-      animation-delay: 2s;
-    }
-
-    @keyframes drop {
-      0% { top: -100%; opacity: 0; }
-      30% { opacity: 1; }
-      100% { top: 100%; opacity: 0; }
+    @keyframes fall {
+      0% { top: -100px; opacity: 0; }
+      10% { opacity: 1; }
+      100% { top: 110%; opacity: 0; }
     }
 
     .container {
@@ -106,21 +101,11 @@
 </head>
 <body>
 
-  <div class="matrix-header">
+  <header>
     <h1>Allan Urbano</h1>
-    <div class="matrix-bg">
-      <!-- You can copy this div multiple times for more columns -->
-      <div class="matrix-row" style="left: 5%;">1010101010101010</div>
-      <div class="matrix-row" style="left: 15%;">0101011001011010</div>
-      <div class="matrix-row" style="left: 25%;">0011100100111001</div>
-      <div class="matrix-row" style="left: 35%;">1100110011001100</div>
-      <div class="matrix-row" style="left: 45%;">1010100011101010</div>
-      <div class="matrix-row" style="left: 55%;">1110001110001110</div>
-      <div class="matrix-row" style="left: 65%;">0001110001110001</div>
-      <div class="matrix-row" style="left: 75%;">1001011001011001</div>
-      <div class="matrix-row" style="left: 85%;">0110100110100110</div>
-    </div>
-  </div>
+    <p>📊 SQL Data Analyst • Insight Builder • Problem Solver</p>
+    <div class="binary-stream" id="binary-stream"></div>
+  </header>
 
   <div class="container">
 
@@ -162,5 +147,21 @@
     </div>
 
   </div>
+
+  <!-- 🧠 Add animated binary with JavaScript -->
+  <script>
+    const container = document.getElementById('binary-stream');
+    const width = window.innerWidth;
+    const digitCount = Math.floor(width / 30);
+
+    for (let i = 0; i < digitCount; i++) {
+      const digit = document.createElement('div');
+      digit.className = 'digit';
+      digit.style.left = `${i * 30}px`;
+      digit.style.animationDuration = `${2 + Math.random() * 3}s`;
+      digit.textContent = Math.random() > 0.5 ? '1' : '0';
+      container.appendChild(digit);
+    }
+  </script>
 </body>
 </html>
