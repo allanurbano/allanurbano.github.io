@@ -17,47 +17,72 @@
       color: #1a237e;
     }
     .project {
-      bac
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Allan Urbano | Data Analyst Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      background: #ffffff;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-left: 5px solid #1976d2;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    a {
+      color: #1565c0;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .skills, .contact {
+      background: #eef3fb;
+      padding: 20px;
+      border-left: 5px solid #90caf9;
+      margin-bottom: 30px;
+    }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 40px; line-height: 1.6;">
+<body>
 
   <h1>Allan Urbano</h1>
-  <p>Aspiring Data Analyst with a strong foundation in SQL, Excel, and data visualization. I enjoy transforming messy data into clean, actionable insights.</p>
+  <p>🔍 Data Analyst focused on transforming raw data into meaningful insights using SQL, Excel, and visualization tools.</p>
 
   <h2>📊 SQL Projects</h2>
 
-  <h3>🔸 Job Market Analysis using SQL</h3>
-  <p>Analyzed job listing data to uncover trends in hiring demand, skill frequency, and keyword patterns.</p>
-  <ul>
-    <li>Used SQL to group, filter, and aggregate data from multiple job boards</li>
-    <li>Identified top-requested tools, roles, and hiring regions</li>
-    <li>Created logical summaries using JOIN, GROUP BY, and filtering techniques</li>
-  </ul>
-  <p>
-    <a href="https://allanurbano.github.io/sql-job-market-analysis/" target="_blank">View Project →</a><br>
-    <a href="https://github.com/djindarth/SQL_Project_Data_Job_Analysis" target="_blank">View Source Code on GitHub →</a>
-  </p>
+  <div class="project">
+    <h3>Job Market Analysis using SQL</h3>
+    <p>Analyzed job listing data to identify the most in-demand skills, job titles, and hiring patterns across regions.</p>
+    <ul>
+      <li>Used SQL joins, grouping, and filters to extract patterns from messy job board data</li>
+      <li>Mapped top-requested skills and tools (SQL, Python, Excel, etc.)</li>
+      <li>Explored title trends like "Data Analyst", "Business Analyst", "Data Scientist"</li>
+    </ul>
+    <p>
+      🔗 <a href="https://allanurbano.github.io/sql-job-market-analysis/" target="_blank">View Project</a>  
+      |  
+      <a href="https://github.com/djindarth/SQL_Project_Data_Job_Analysis" target="_blank">View Source Code</a>
+    </p>
+  </div>
+
+  <!-- Add more project boxes below as needed -->
 
   <h2>🛠 Skills</h2>
-  <ul>
-    <li>SQL (JOINs, subqueries, aggregations, filtering)</li>
-    <li>Excel (pivot tables, formulas, dashboards)</li>
-    <li>Power BI / Tableau (in progress)</li>
-    <li>Python (basic data manipulation and cleaning)</li>
-  </ul>
+  <div class="skills">
+    <ul>
+      <li>SQL (PostgreSQL, MySQL): joins, CTEs, subqueries, aggregations</li>
+      <li>Excel: pivot tables, data cleaning, formulas</li>
+      <li>Power BI / Tableau (in progress): dashboards, visual storytelling</li>
+      <li>Python (beginner): pandas, matplotlib, basic cleaning</li>
+    </ul>
+  </div>
 
   <h2>📄 Resume</h2>
-  <p><a href="allan_urbano_resume.pdf" target="_blank">Download Resume (PDF)</a></p>
+  <p><a href="allan_urbano_resume.pdf" target="_blank">Download PDF Resume</a></p>
 
   <h2>📬 Contact</h2>
-  <p>Email: your.email@example.com</p>
-  <p>LinkedIn: <a href="https://linkedin.com/in/YOURPROFILE" target="_blank">linkedin.com/in/YOURPROFILE</a></p>
+  <div class="contact">
+    <p>Email: your.email@example.com</p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/YOURPROFILE" target="_blank">linkedin.com/in/YOURPROFILE</a></p>
+  </div>
 
 </body>
 </html>
