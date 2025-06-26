@@ -28,19 +28,15 @@
       position: relative;
       z-index: 2;
       color: #fff;
-      text-shadow: 
+      transform: perspective(800px) rotateX(5deg);
+      text-shadow:
         0 1px 0 #ccc,
         0 2px 0 #c9c9c9,
         0 3px 0 #bbb,
-        0 4px 0 #b9b9b9,
-        0 5px 0 #aaa,
-        0 6px 1px rgba(0,0,0,0.1),
-        0 0 5px rgba(0,0,0,0.1),
-        0 1px 3px rgba(0,0,0,0.3),
-        0 3px 5px rgba(0,0,0,0.2),
-        0 5px 10px rgba(0,0,0,0.25),
-        0 10px 10px rgba(0,0,0,0.2),
-        0 20px 20px rgba(0,0,0,0.15);
+        0 4px 0 #999,
+        0 5px 0 #777,
+        0 6px 0 #555,
+        0 7px 3px rgba(0,0,0,0.4);
     }
 
     header p {
@@ -67,7 +63,10 @@
       opacity: 0.95;
       animation: fall linear infinite;
       user-select: none;
-      text-shadow: 0 0 6px rgba(255,255,255,0.8);
+      transform: translateZ(0) rotateX(30deg);
+      text-shadow:
+        0 0 6px rgba(255, 255, 255, 0.9),
+        1px 1px 3px rgba(0,0,0,0.4);
     }
 
     @keyframes fall {
@@ -199,7 +198,6 @@
       digit.style.color = randomColor();
       digit.textContent = Math.floor(Math.random() * 10);
 
-      // Randomize mid-animation
       setInterval(() => {
         digit.textContent = Math.floor(Math.random() * 10);
         digit.style.color = randomColor();
