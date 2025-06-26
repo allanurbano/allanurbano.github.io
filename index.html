@@ -145,6 +145,7 @@
 
   </div>
 
+  <!-- JavaScript: full digit rain (0–9) with colors -->
   <script>
     const container = document.getElementById('binary-stream');
     const width = window.innerWidth;
@@ -157,7 +158,7 @@
       digit.style.left = `${i * 25}px`;
       digit.style.animationDuration = `${2 + Math.random() * 4}s`;
       digit.style.color = colors[Math.floor(Math.random() * colors.length)];
-      digit.textContent = Math.random() > 0.5 ? '1' : '0';
+      digit.textContent = Math.floor(Math.random() * 10);
       container.appendChild(digit);
     }
   </script>
