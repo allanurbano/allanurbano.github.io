@@ -5,31 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Allan Urbano | SQL Data Analyst Portfolio</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Segoe UI', Tahoma, sans-serif;
-      margin: 0;
       background-color: #f4f6f8;
       color: #212121;
     }
-    header {
-      background: #0d47a1;
-      color: white;
-      padding: 40px 20px;
+
+    /* Matrix-style header */
+    .matrix-header {
+      position: relative;
+      height: 300px;
+      background-color: black;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
     }
-    header h1 {
-      margin: 0;
-      font-size: 3em;
+
+    .matrix-header h1 {
+      color: #00ff90;
+      font-size: 3.5em;
+      z-index: 2;
+      text-shadow: 0 0 15px #00ff90;
     }
-    header p {
+
+    .matrix-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .matrix-row {
+      position: absolute;
+      top: -100%;
+      width: 20px;
+      animation: drop 5s linear infinite;
+      color: #00ff90;
+      font-family: monospace;
       font-size: 1.2em;
-      margin-top: 10px;
     }
+
+    .matrix-row:nth-child(odd) {
+      animation-duration: 6s;
+    }
+
+    .matrix-row:nth-child(even) {
+      animation-delay: 2s;
+    }
+
+    @keyframes drop {
+      0% { top: -100%; opacity: 0; }
+      30% { opacity: 1; }
+      100% { top: 100%; opacity: 0; }
+    }
+
     .container {
-      max-width: 1400px;
+      max-width: 1200px;
       margin: auto;
       padding: 40px 20px;
     }
+
     .project, .skills, .contact {
       background: white;
       padding: 30px;
@@ -37,40 +83,44 @@
       border-left: 6px solid #1e88e5;
       box-shadow: 0 3px 10px rgba(0,0,0,0.05);
     }
+
     h2 {
       color: #0d47a1;
       border-bottom: 2px solid #90caf9;
       padding-bottom: 5px;
     }
-    ul {
-      padding-left: 20px;
-    }
+
     a {
       color: #0d47a1;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
-    .banner {
-      text-align: center;
-      margin-top: 30px;
-    }
-    .banner img {
-      width: 100px;
-      opacity: 0.9;
+
+    ul {
+      padding-left: 20px;
     }
   </style>
 </head>
 <body>
 
-  <header>
+  <div class="matrix-header">
     <h1>Allan Urbano</h1>
-    <p>📊 SQL Data Analyst • Insight Builder • Problem Solver</p>
-    <div class="banner">
-      <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="SQL Logo">
+    <div class="matrix-bg">
+      <!-- You can copy this div multiple times for more columns -->
+      <div class="matrix-row" style="left: 5%;">1010101010101010</div>
+      <div class="matrix-row" style="left: 15%;">0101011001011010</div>
+      <div class="matrix-row" style="left: 25%;">0011100100111001</div>
+      <div class="matrix-row" style="left: 35%;">1100110011001100</div>
+      <div class="matrix-row" style="left: 45%;">1010100011101010</div>
+      <div class="matrix-row" style="left: 55%;">1110001110001110</div>
+      <div class="matrix-row" style="left: 65%;">0001110001110001</div>
+      <div class="matrix-row" style="left: 75%;">1001011001011001</div>
+      <div class="matrix-row" style="left: 85%;">0110100110100110</div>
     </div>
-  </header>
+  </div>
 
   <div class="container">
 
