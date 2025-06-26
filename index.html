@@ -5,11 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Allan Urbano | SQL Data Analyst Portfolio</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Segoe UI', Tahoma, sans-serif;
@@ -48,15 +44,16 @@
       height: 100%;
       z-index: 1;
       overflow: hidden;
-      opacity: 0.2;
+      opacity: 0.25;
+      pointer-events: none;
     }
 
     .digit {
       position: absolute;
-      color: #ffffff;
       font-family: monospace;
       font-size: 1.2em;
       animation: fall linear infinite;
+      user-select: none;
     }
 
     @keyframes fall {
@@ -148,20 +145,22 @@
 
   </div>
 
-  <!-- 🧠 Add animated binary with JavaScript -->
   <script>
     const container = document.getElementById('binary-stream');
     const width = window.innerWidth;
-    const digitCount = Math.floor(width / 30);
+    const count = Math.floor(width / 25);
+    const colors = ['#00ff90', '#00e5ff', '#8c9eff', '#90caf9', '#76ff03'];
 
-    for (let i = 0; i < digitCount; i++) {
+    for (let i = 0; i < count; i++) {
       const digit = document.createElement('div');
       digit.className = 'digit';
-      digit.style.left = `${i * 30}px`;
-      digit.style.animationDuration = `${2 + Math.random() * 3}s`;
+      digit.style.left = `${i * 25}px`;
+      digit.style.animationDuration = `${2 + Math.random() * 4}s`;
+      digit.style.color = colors[Math.floor(Math.random() * colors.length)];
       digit.textContent = Math.random() > 0.5 ? '1' : '0';
       container.appendChild(digit);
     }
   </script>
+
 </body>
 </html>
