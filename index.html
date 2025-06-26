@@ -36,22 +36,21 @@
       z-index: 2;
     }
 
-    .binary-stream {
+    .digit-stream {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       z-index: 1;
-      overflow: hidden;
-      opacity: 0.25;
       pointer-events: none;
     }
 
     .digit {
       position: absolute;
       font-family: monospace;
-      font-size: 1.2em;
+      font-size: 1.5em;
+      opacity: 0.7;
       animation: fall linear infinite;
       user-select: none;
     }
@@ -101,7 +100,7 @@
   <header>
     <h1>Allan Urbano</h1>
     <p>📊 SQL Data Analyst • Insight Builder • Problem Solver</p>
-    <div class="binary-stream" id="binary-stream"></div>
+    <div class="digit-stream" id="digit-stream"></div>
   </header>
 
   <div class="container">
@@ -145,21 +144,34 @@
 
   </div>
 
-  <!-- JavaScript: full digit rain (0–9) with colors -->
   <script>
-    const container = document.getElementById('binary-stream');
-    const width = window.innerWidth;
-    const count = Math.floor(width / 25);
-    const colors = ['#00ff90', '#00e5ff', '#8c9eff', '#90caf9', '#76ff03'];
+    const stream = document.getElementById('digit-stream');
+    const count = Math.floor(window.innerWidth / 20);
 
-    for (let i = 0; i < count; i++) {
+    function randomColor() {
+      const letters = '0123456789ABCDEF';
+      return '#' + Array.from({length: 6}, () => letters[Math.floor(Math.random() * 16)]).join('');
+    }
+
+    function createDigit(x) {
       const digit = document.createElement('div');
       digit.className = 'digit';
-      digit.style.left = `${i * 25}px`;
+      digit.style.left = `${x}px`;
       digit.style.animationDuration = `${2 + Math.random() * 4}s`;
-      digit.style.color = colors[Math.floor(Math.random() * colors.length)];
+      digit.style.color = randomColor();
       digit.textContent = Math.floor(Math.random() * 10);
-      container.appendChild(digit);
+
+      // Randomize digit mid-fall
+      setInterval(() => {
+        digit.textContent = Math.floor(Math.random() * 10);
+        digit.style.color = randomColor();
+      }, 500 + Math.random() * 1000);
+
+      stream.appendChild(digit);
+    }
+
+    for (let i = 0; i < count; i++) {
+      createDigit(i * 20);
     }
   </script>
 
