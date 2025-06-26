@@ -3,86 +3,114 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Allan Urbano | Data Analyst Portfolio</title>
+  <title>Allan Urbano | SQL Data Analyst Portfolio</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: #f9fafe;
-      color: #222;
-      max-width: 900px;
+      margin: 0;
+      background-color: #f4f6f8;
+      color: #212121;
+    }
+    header {
+      background: #0d47a1;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+    }
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+    .container {
+      max-width: 1400px;
       margin: auto;
       padding: 40px 20px;
     }
-    h1, h2, h3 {
-      color: #1a237e;
+    .project, .skills, .contact {
+      background: white;
+      padding: 30px;
+      margin-bottom: 40px;
+      border-left: 6px solid #1e88e5;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
     }
-    .project {
-      background: #ffffff;
-      padding: 20px;
-      margin-bottom: 30px;
-      border-left: 5px solid #1976d2;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    h2 {
+      color: #0d47a1;
+      border-bottom: 2px solid #90caf9;
+      padding-bottom: 5px;
+    }
+    ul {
+      padding-left: 20px;
     }
     a {
-      color: #1565c0;
+      color: #0d47a1;
       text-decoration: none;
     }
     a:hover {
       text-decoration: underline;
     }
-    ul {
-      padding-left: 20px;
+    .banner {
+      text-align: center;
+      margin-top: 30px;
     }
-    .skills, .contact {
-      background: #eef3fb;
-      padding: 20px;
-      border-left: 5px solid #90caf9;
-      margin-bottom: 30px;
+    .banner img {
+      width: 100px;
+      opacity: 0.9;
     }
   </style>
 </head>
 <body>
 
-  <h1>Allan Urbano</h1>
-  <p>🔍 Data Analyst focused on transforming raw data into meaningful insights using SQL, Excel, and visualization tools.</p>
+  <header>
+    <h1>Allan Urbano</h1>
+    <p>📊 SQL Data Analyst • Insight Builder • Problem Solver</p>
+    <div class="banner">
+      <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="SQL Logo">
+    </div>
+  </header>
 
-  <h2>📊 SQL Projects</h2>
+  <div class="container">
 
-  <div class="project">
-    <h3>Job Market Analysis using SQL</h3>
-    <p>Analyzed job listing data to identify the most in-demand skills, job titles, and hiring patterns across regions.</p>
-    <ul>
-      <li>Used SQL joins, grouping, and filters to extract patterns from messy job board data</li>
-      <li>Mapped top-requested skills and tools (SQL, Python, Excel, etc.)</li>
-      <li>Explored title trends like "Data Analyst", "Business Analyst", "Data Scientist"</li>
-    </ul>
-    <p>
-      🔗 <a href="https://allanurbano.github.io/sql-job-market-analysis/" target="_blank">View Project</a>  
-      |  
-      <a href="https://github.com/djindarth/SQL_Project_Data_Job_Analysis" target="_blank">View Source Code</a>
-    </p>
+    <h2>📁 Featured Project</h2>
+    <div class="project">
+      <h3>Job Market Analysis using SQL</h3>
+      <p>Used SQL to analyze job listing data and uncover high-demand skills, job title trends, and regional hiring behavior.</p>
+      <ul>
+        <li>Joined and cleaned multiple datasets</li>
+        <li>Queried for frequency of technical skills across thousands of postings</li>
+        <li>Used subqueries, filters, and aggregation to summarize the insights</li>
+      </ul>
+      <p>
+        🔗 <a href="https://allanurbano.github.io/sql-job-market-analysis/" target="_blank">View Project</a>  
+        |  
+        <a href="https://github.com/djindarth/SQL_Project_Data_Job_Analysis" target="_blank">View Source Code</a>
+      </p>
+    </div>
+
+    <h2>🛠 Technical Skills</h2>
+    <div class="skills">
+      <ul>
+        <li><strong>SQL:</strong> Joins, Subqueries, CTEs, Aggregation, Filtering</li>
+        <li><strong>Excel:</strong> Pivot tables, Lookups, Conditional logic</li>
+        <li><strong>Data Viz:</strong> Power BI (in progress), Tableau (basic)</li>
+        <li><strong>Python:</strong> pandas, matplotlib (beginner level)</li>
+      </ul>
+    </div>
+
+    <h2>📄 Resume</h2>
+    <div class="project">
+      <p><a href="allan_urbano_resume.pdf" target="_blank">Download My Resume (PDF)</a></p>
+    </div>
+
+    <h2>📬 Contact</h2>
+    <div class="contact">
+      <p>Email: your.email@example.com</p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/YOURPROFILE" target="_blank">linkedin.com/in/YOURPROFILE</a></p>
+    </div>
+
   </div>
-
-  <!-- Add more project boxes below as needed -->
-
-  <h2>🛠 Skills</h2>
-  <div class="skills">
-    <ul>
-      <li>SQL (PostgreSQL, MySQL): joins, CTEs, subqueries, aggregations</li>
-      <li>Excel: pivot tables, data cleaning, formulas</li>
-      <li>Power BI / Tableau (in progress): dashboards, visual storytelling</li>
-      <li>Python (beginner): pandas, matplotlib, basic cleaning</li>
-    </ul>
-  </div>
-
-  <h2>📄 Resume</h2>
-  <p><a href="allan_urbano_resume.pdf" target="_blank">Download PDF Resume</a></p>
-
-  <h2>📬 Contact</h2>
-  <div class="contact">
-    <p>Email: your.email@example.com</p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/YOURPROFILE" target="_blank">linkedin.com/in/YOURPROFILE</a></p>
-  </div>
-
 </body>
 </html>
