@@ -48,12 +48,11 @@
   </header>
 
   <div class="container">
-    <!-- sections unchanged -->
     <!-- ABOUT -->
     <section id="about">
       <h2>👤 About Me</h2>
       <div class="block">
-        <p>Hello! I'm <strong>Allan Urbano</strong>, a data‑driven professional who transforms raw numbers into actionable insights. With a strong foundation in SQL, I specialize in querying, cleaning, and modeling data to answer real‑world business questions.</p>
+        <p>Hello! I'm <strong>Allan Urbano</strong>, a data‑driven professional who transforms raw numbers into actionable insights.</p>
         <ul>
           <li><strong>Analytical Mindset:</strong> Thrive on uncovering trends and patterns that drive smarter decisions.</li>
           <li><strong>Communication:</strong> Translate complex findings into plain language stories for executives and stakeholders.</li>
@@ -62,35 +61,69 @@
         </ul>
       </div>
     </section>
-    <!-- other sections unchanged (omitted here for brevity) -->
+
+    <!-- FEATURED PROJECT -->
+    <section id="featured">
+      <h2>📁 Featured Project</h2>
+      <div class="block">
+        <h3 style="color:black">Job Market Analysis using SQL</h3>
+        <p>Used SQL to analyze job listing data and uncover high‑demand skills, job‑title trends, and regional hiring behavior.</p>
+        <ul>
+          <li>Joined and cleaned multiple datasets</li>
+          <li>Queried for frequency of technical skills across thousands of postings</li>
+          <li>Used subqueries, filters, and aggregation to summarize insights</li>
+        </ul>
+        <p>🔗 <a href="https://allanurbano.github.io/sql-job-market-analysis/" target="_blank">View Project</a> | <a href="https://github.com/allanurbano/SQL_Project_Data_Job_Analysis" target="_blank">Source Code</a></p>
+      </div>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section id="dashboard">
+      <h2>📊 Power BI Visualization</h2>
+      <div class="block">
+        <p>Interactive dashboard built from SQL analysis of job postings.</p>
+        <div style="overflow-x:auto">
+          <iframe title="skills_github" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiZDE0ZmI0OWQtN2UyMS00NDYyLTkzZTktODA2YWU3Y2Y0OGU2IiwidCI6ImJlMDk2MGUyLWNmMjEtNDE2Yi1hMzZjLTExMTI1MmZiNDU3ZCIsImMiOjEwfQ%3D%3D" frameborder="0" allowfullscreen="true"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2>🛠 Technical Skills</h2>
+      <div class="block">
+        <ul>
+          <li><strong>SQL:</strong> Joins, Subqueries, CTEs, Aggregation, Filtering</li>
+          <li><strong>Excel:</strong> Pivot tables, Lookups, Conditional logic</li>
+          <li><strong>Data Viz:</strong> Power BI (in progress), Tableau (basic)</li>
+          <li><strong>Python:</strong> pandas, matplotlib (beginner level)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- RESUME -->
+    <section id="resume">
+      <h2>📄 Resume</h2>
+      <div class="block"><p><a href="allan_urbano_resume.pdf" target="_blank">Download My Resume (PDF)</a></p></div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>📬 Contact</h2>
+      <div class="block">
+        <p>Email: your.email@example.com</p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/YOURPROFILE" target="_blank">linkedin.com/in/YOURPROFILE</a></p>
+      </div>
+    </section>
   </div>
 
   <script>
-    /* Falling digits animation rebuild */
-    const stream = document.getElementById('digit-stream');
-    const columns = Math.floor(window.innerWidth / 22);
-
-    function newDigit(x){
-      const d = document.createElement('div');
-      d.className = 'digit';
-      d.textContent = Math.floor(Math.random()*10);
-      d.style.left = `${x}px`;
-      d.style.color = randomColor();
-      d.style.animation = `fall ${3+Math.random()*4}s linear infinite`;
-      // change number & color periodically
-      setInterval(()=>{
-        d.textContent = Math.floor(Math.random()*10);
-        d.style.color = randomColor();
-      },600+Math.random()*700);
-      stream.appendChild(d);
-    }
-
-    function randomColor(){
-      const hex = '0123456789ABCDEF';
-      return '#' + [...Array(6)].map(()=>hex[Math.floor(Math.random()*16)]).join('');
-    }
-
-    for(let i=0;i<columns;i++) newDigit(i*22);
+    /* Falling digits animation */
+    const stream=document.getElementById('digit-stream');
+    const columns=Math.floor(window.innerWidth/22);
+    function randomColor(){const hex='0123456789ABCDEF';return'#'+Array.from({length:6},()=>hex[Math.floor(Math.random()*16)]).join('');}
+    function createDigit(x){const d=document.createElement('div');d.className='digit';d.style.left=`${x}px`;d.style.animation=`fall ${3+Math.random()*4}s linear infinite`;d.textContent=Math.floor(Math.random()*10);d.style.color=randomColor();setInterval(()=>{d.textContent=Math.floor(Math.random()*10);d.style.color=randomColor();},600+Math.random()*700);stream.appendChild(d);}
+    for(let i=0;i<columns;i++) createDigit(i*22);
   </script>
 </body>
 </html>
