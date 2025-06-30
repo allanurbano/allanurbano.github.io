@@ -2,119 +2,121 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>All Ur Analytics | SQL Data Analyst Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Ur Analytics | Allan Urbano</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: #f4f6f8;
-      color: #212121;
+    html {
+      scroll-behavior: smooth;
     }
 
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+      color: #fafafa;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Header */
     header {
-      background: linear-gradient(135deg, #002f6c, #0d47a1, #2196f3);
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
       position: relative;
+      text-align: center;
+      padding: 4rem 1rem 6rem;
       overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
     header h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-      position: relative;
-      z-index: 2;
-      color: #fff;
-      transform: perspective(800px) rotateX(5deg);
-      text-shadow:
-        0 1px 0 #ccc,
-        0 2px 0 #c9c9c9,
-        0 3px 0 #bbb,
-        0 4px 0 #999,
-        0 5px 0 #777,
-        0 6px 0 #555,
-        0 7px 3px rgba(0,0,0,0.4);
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
 
-    header p {
-      font-size: 1.2em;
-      font-weight: 500;
-      position: relative;
-      z-index: 2;
+    header h2 {
+      font-size: 1.25rem;
+      font-weight: 400;
+      opacity: 0.9;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.25);
     }
 
-    header p strong {
-      color: #ffee58;
-    }
-
-    .digit-stream {
+    /* Falling numbers */
+    .numbers span {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none;
-      opacity: 1;
-    }
-
-    .digit {
-      position: absolute;
-      font-family: monospace;
-      font-size: 2em;
-      opacity: 0.95;
-      animation: fall linear infinite;
-      user-select: none;
-      transform: translateZ(0) rotateX(30deg);
-      text-shadow:
-        0 0 6px rgba(255, 255, 255, 0.9),
-        1px 1px 3px rgba(0,0,0,0.4);
+      top: -2rem;
+      font-size: 1.25rem;
+      opacity: 0.4;
+      animation: fall var(--dur) linear infinite;
     }
 
     @keyframes fall {
-      0% { top: -100px; opacity: 0; }
-      10% { opacity: 1; }
-      100% { top: 110%; opacity: 0; }
+      to { transform: translateY(110vh); }
     }
 
-    .container {
-      width: 100%;
-      max-width: none;
-      margin: auto;
-      padding: 10px 40px;
+    /* Legend navigation */
+    .legend {
+      position: fixed;
+      top: 50%;
+      right: 1rem;
+      transform: translateY(-50%);
+      z-index: 1000;
     }
 
-    .project, .skills, .contact {
-      background: white;
-      padding: 25px;
-      margin-bottom: 30px;
-      border-left: 6px solid #1e88e5;
-      box-shadow: 
-        0 2px 4px rgba(0,0,0,0.1),
-        0 6px 20px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .legend ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
     }
 
-    .project:hover, .skills:hover, .contact:hover {
-      transform: translateY(-5px);
-      box-shadow: 
-        0 4px 8px rgba(0,0,0,0.2),
-        0 12px 24px rgba(0,0,0,0.15);
+    .legend a {
+      padding: 0.4rem 0.75rem;
+      background: rgba(255,255,255,0.08);
+      border-radius: 0.75rem;
+      font-size: 0.9rem;
+      color: #ffeb3b;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      transition: background 0.3s, transform 0.3s;
+      white-space: nowrap;
     }
 
-    h2 {
+    .legend a:hover {  
+      background: rgba(255,255,255,0.15);
+      transform: translateX(-3px);
+    }
+
+    .legend a.active {
+      background: #ffeb3b;
       color: #0d47a1;
-      border-bottom: 2px solid #90caf9;
-      padding-bottom: 5px;
-      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 600px) {
+      .legend { display: none; }
+    }
+
+    /* Sections */
+    section {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(3px);
+      margin: 2rem auto;
+      width: min(90%, 900px);
+      padding: 2rem;
+      border-radius: 1.25rem;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+    }
+
+    section h3 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 
     a {
-      color: #0d47a1;
+      color: #ffeb3b;
       text-decoration: none;
     }
 
@@ -122,103 +124,163 @@
       text-decoration: underline;
     }
 
-    ul {
-      padding-left: 20px;
+    ul.skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.75rem;
+      list-style: none;
     }
 
-    .project h3 {
-      font-size: 1.0em;
-      color: #0d47a1;
-      margin-bottom: 4px;
+    ul.skills li {
+      background: rgba(255,255,255,0.08);
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.75rem;
+      text-align: center;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .contact-links a {
+      background: rgba(255,255,255,0.08);
+      padding: 0.5rem 1rem;
+      border-radius: 0.75rem;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      font-size: 0.95rem;
+    }
+
+    /* Responsive iframe */
+    .iframe-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .iframe-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      padding: 1.5rem 0 3rem;
+      opacity: 0.8;
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>All Ur Analytics</h1>
-    <p>by <strong>Allan Urbano</strong> • SQL Data Analyst • Insight Builder • Problem Solver</p>
-    <div class="digit-stream" id="digit-stream"></div>
+    <h2>by Allan Urbano</h2>
+    <div class="numbers" id="numbers"></div>
   </header>
 
-  <div class="container">
+  <!-- Legend Navigation -->
+  <nav class="legend" aria-label="Section navigation">
+    <ul>
+      <li><a href="#featured-project">Project</a></li>
+      <li><a href="#powerbi-dashboard">Dashboard</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#resume">Résumé</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    <h2>📁 Featured Project</h2>
-    <div class="project">
-      <h3 style="color: black;">Job Market Analysis using SQL</h3>
-      <p>Used SQL to analyze job listing data and uncover high-demand skills, job title trends, and regional hiring behavior.</p>
-      <ul>
-        <li>Joined and cleaned multiple datasets</li>
-        <li>Queried for frequency of technical skills across thousands of postings</li>
-        <li>Used subqueries, filters, and aggregation to summarize the insights</li>
-      </ul>
-      <p>
-        🔗 <a href="https://allanurbano.github.io/sql-job-market-analysis/" target="_blank">View Project</a>  
-        |  
-        <a href="https://github.com/allanurbano/SQL_Project_Data_Job_Analysis" target="_blank">View Source Code</a>
-      </p>
+  <section id="featured-project">
+    <h3>Featured SQL Project</h3>
+    <p>Explore my in-depth analysis of data-related job trends using SQL and visualization tools. View the project on <a href="https://github.com/djindarth/SQL_Project_Data_Job_Analysis" target="_blank" rel="noopener">GitHub</a>.</p>
+  </section>
+
+  <section id="powerbi-dashboard">
+    <h3>Interactive Power BI Dashboard</h3>
+    <div class="iframe-container">
+      <!-- Replace the src with your actual published Power BI report link -->
+      <iframe src="https://app.powerbi.com/view?r=YOUR_REPORT_ID_HERE" allowfullscreen></iframe>
     </div>
+  </section>
 
-    <h2>📊 Power BI Visualization</h2>
-    <div class="project">
-      <p>Interactive dashboard built from SQL analysis of job postings.</p>
-      <div style="overflow-x:auto;">
-        <iframe title="skills_github" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiZDE0ZmI0OWQtN2UyMS00NDYyLTkzZTktODA2YWU3Y2Y0OGU2IiwidCI6ImJlMDk2MGUyLWNmMjEtNDE2Yi1hMzZjLTExMTI1MmZiNDU3ZCIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
-      </div>
+  <section id="skills">
+    <h3>Technical Skills</h3>
+    <ul class="skills">
+      <li>SQL &amp; T-SQL</li>
+      <li>Python</li>
+      <li>Power BI</li>
+      <li>Excel &amp; VBA</li>
+      <li>Data Modeling</li>
+      <li>ETL Pipelines</li>
+      <li>Git &amp; GitHub</li>
+      <li>Tableau</li>
+    </ul>
+  </section>
+
+  <section id="resume">
+    <h3>Résumé</h3>
+    <p>Download my résumé in PDF format <a href="resume.pdf" target="_blank">here</a>.</p>
+  </section>
+
+  <section id="contact">
+    <h3>Contact</h3>
+    <div class="contact-links">
+      <a href="mailto:allan.urbano@example.com">Email</a>
+      <a href="https://www.linkedin.com/in/allanurbano/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
+  </section>
 
-    <h2>🛠 Technical Skills</h2>
-    <div class="skills">
-      <ul>
-        <li><strong>SQL:</strong> Joins, Subqueries, CTEs, Aggregation, Filtering</li>
-        <li><strong>Excel:</strong> Pivot tables, Lookups, Conditional logic</li>
-        <li><strong>Data Viz:</strong> Power BI (in progress), Tableau (basic)</li>
-        <li><strong>Python:</strong> pandas, matplotlib (beginner level)</li>
-      </ul>
-    </div>
-
-    <h2>📄 Resume</h2>
-    <div class="project">
-      <p><a href="allan_urbano_resume.pdf" target="_blank">Download My Resume (PDF)</a></p>
-    </div>
-
-    <h2>📬 Contact</h2>
-    <div class="contact">
-      <p>Email: your.email@example.com</p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/YOURPROFILE" target="_blank">linkedin.com/in/YOURPROFILE</a></p>
-    </div>
-
-  </div>
+  <footer>
+    © <span id="year"></span> Allan Urbano — All rights reserved.
+  </footer>
 
   <script>
-    const stream = document.getElementById('digit-stream');
-    const count = Math.floor(window.innerWidth / 20);
+    /* Falling numbers animation */
+    const numbersContainer = document.getElementById('numbers');
+    const totalNumbers = 80;
 
-    function randomColor() {
-      const letters = '0123456789ABCDEF';
-      return '#' + Array.from({length: 6}, () => letters[Math.floor(Math.random() * 16)]).join('');
+    for (let i = 0; i < totalNumbers; i++) {
+      const span = document.createElement('span');
+      span.textContent = Math.floor(Math.random() * 10);
+      span.style.left = `${Math.random() * 100}vw`;
+      span.style.fontSize = `${0.75 + Math.random() * 1.5}rem`;
+      span.style.opacity = 0.2 + Math.random() * 0.6;
+      span.style.setProperty('--dur', `${8 + Math.random() * 10}s`);
+      numbersContainer.appendChild(span);
     }
 
-    function createDigit(x) {
-      const digit = document.createElement('div');
-      digit.className = 'digit';
-      digit.style.left = `${x}px`;
-      digit.style.animationDuration = `${2 + Math.random() * 4}s`;
-      digit.style.color = randomColor();
-      digit.textContent = Math.floor(Math.random() * 10);
+    /* Update footer year */
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-      setInterval(() => {
-        digit.textContent = Math.floor(Math.random() * 10);
-        digit.style.color = randomColor();
-      }, 500 + Math.random() * 1000);
+    /* Highlight active legend link */
+    const sections = document.querySelectorAll('section');
+    const legendLinks = document.querySelectorAll('.legend a');
 
-      stream.appendChild(digit);
-    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          legendLinks.forEach(link => {
+            const targetId = link.getAttribute('href').substring(1);
+            link.classList.toggle('active', targetId === entry.target.id);
+          });
+        }
+      });
+    }, { rootMargin: '-30% 0px -50% 0px', threshold: 0 });
 
-    for (let i = 0; i < count; i++) {
-      createDigit(i * 20);
-    }
+    sections.forEach(section => observer.observe(section));
   </script>
-
 </body>
 </html>
