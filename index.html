@@ -13,10 +13,10 @@
       font-family: 'Segoe UI', Tahoma, sans-serif;
       background-color: #f4f6f8;
       color: #212121;
-      padding-top: 170px; /* offset fixed header */
+      padding-top: 230px; /* offset for fixed header including nav */
     }
 
-    /* Header */
+    /* Header (fixed) */
     header {
       position: fixed;
       top: 0;
@@ -24,7 +24,7 @@
       width: 100%;
       background: linear-gradient(135deg, #002f6c, #0d47a1, #2196f3);
       color: white;
-      padding: 40px 20px;
+      padding: 40px 20px 20px; /* bottom padding adjusted for nav */
       text-align: center;
       overflow: hidden;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
@@ -47,32 +47,36 @@
         0 7px 3px rgba(0,0,0,0.4);
     }
 
-    header p { font-size: 1.2em; font-weight: 500; position: relative; z-index: 2; }
+    header p { font-size: 1.15em; font-weight: 500; position: relative; z-index: 2; }
     header p strong { color: #ffee58; }
+
+    /* Navigation legend inside header aligned left */
+    nav.legend {
+      margin-top: 18px;
+      margin-left: 20px;
+      display: flex;
+      justify-content: flex-start;
+      gap: 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    nav.legend a {
+      color: #ffee58;
+      font-size: 0.95rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.25s;
+    }
+    nav.legend a:hover { opacity: 0.8; text-decoration: underline; }
+    nav.legend a.active { color: #ffffff; text-decoration: underline; }
+
+    @media(max-width: 700px){ nav.legend{flex-wrap: wrap; gap:0.75rem; margin-left:10px;} }
 
     /* Falling digits */
     .digit-stream { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
     .digit { position: absolute; font-family: monospace; font-size: 2em; opacity: 0.9; animation: fall linear infinite; user-select: none; transform: translateZ(0) rotateX(30deg); text-shadow: 0 0 6px rgba(255,255,255,0.9), 1px 1px 3px rgba(0,0,0,0.4);}    
     @keyframes fall { 0%{top:-100px;opacity:0;} 10%{opacity:1;} 100%{top:110%;opacity:0;} }
-
-    /* Navigation legend */
-    nav.legend {
-      position: fixed;
-      top: 180px; /* clear the fixed header fully */
-      left: 15px;
-      z-index: 1200; /* ensure it sits on top */
-      background: rgba(255,255,255,0.95);
-      border-radius: 0.5rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      padding: 0.75rem 1rem;
-    }
-
-    nav.legend ul { list-style: none; display: flex; flex-direction: row; gap: 1rem; }
-    nav.legend a { color: #0d47a1; font-size: 0.9rem; text-decoration: none; font-weight: 600; }
-    nav.legend a:hover { text-decoration: underline; }
-    nav.legend a.active { color: #2196f3; }
-
-    @media(max-width:800px){ nav.legend{display:none;} }
 
     /* Content containers */
     .container { width: 100%; max-width: none; margin: auto; padding: 10px 40px; }
@@ -99,19 +103,15 @@
   <header>
     <h1>All Ur Analytics</h1>
     <p>by <strong>Allan Urbano</strong> • SQL Data Analyst • Insight Builder • Problem Solver</p>
+    <nav class="legend" aria-label="Page sections">
+      <a href="#featured-project">Project</a>
+      <a href="#powerbi">Dashboard</a>
+      <a href="#skills">Skills</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </nav>
     <div class="digit-stream" id="digit-stream"></div>
   </header>
-
-  <!-- Navigation legend -->
-  <nav class="legend" aria-label="Page sections">
-    <ul>
-      <li><a href="#featured-project">Project</a></li>
-      <li><a href="#powerbi">Dashboard</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#resume">Resume</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
 
   <div class="container">
     <h2 id="featured-project">📁 Featured Project</h2>
@@ -149,4 +149,13 @@
 
     <h2 id="contact">📬 Contact</h2>
     <div class="contact">
-      <p>Email: your.email@example.com
+      <p>Email: your.email@example.com</p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/YOURPROFILE" target="_blank">linkedin.com/in/YOURPROFILE</a></p>
+    </div>
+  </div>
+
+  <script>
+    /* Falling digits animation */
+    const stream = document.getElementById('digit-stream');
+    const count = Math.floor(window.innerWidth / 20);
+    function randomColor(){const letters='
