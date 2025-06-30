@@ -13,17 +13,22 @@
       font-family: 'Segoe UI', Tahoma, sans-serif;
       background-color: #f4f6f8;
       color: #212121;
+      padding-top: 170px; /* offset fixed header */
     }
 
     /* Header */
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       background: linear-gradient(135deg, #002f6c, #0d47a1, #2196f3);
       color: white;
       padding: 40px 20px;
       text-align: center;
-      position: relative;
       overflow: hidden;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      z-index: 1100;
     }
 
     header h1 {
@@ -31,7 +36,6 @@
       margin-bottom: 10px;
       position: relative;
       z-index: 2;
-      color: #fff;
       transform: perspective(800px) rotateX(5deg);
       text-shadow:
         0 1px 0 #ccc,
@@ -48,15 +52,15 @@
 
     /* Falling digits */
     .digit-stream { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
-    .digit { position: absolute; font-family: monospace; font-size: 2em; opacity: 0.95; animation: fall linear infinite; user-select: none; transform: translateZ(0) rotateX(30deg); text-shadow: 0 0 6px rgba(255,255,255,0.9), 1px 1px 3px rgba(0,0,0,0.4); }
+    .digit { position: absolute; font-family: monospace; font-size: 2em; opacity: 0.9; animation: fall linear infinite; user-select: none; transform: translateZ(0) rotateX(30deg); text-shadow: 0 0 6px rgba(255,255,255,0.9), 1px 1px 3px rgba(0,0,0,0.4);}    
     @keyframes fall { 0%{top:-100px;opacity:0;} 10%{opacity:1;} 100%{top:110%;opacity:0;} }
 
     /* Navigation legend */
     nav.legend {
       position: fixed;
-      top: 110px; /* roughly below header */
+      top: 130px; /* stays just beneath fixed header */
       left: 15px;
-      z-index: 1000;
+      z-index: 1050;
       background: rgba(255,255,255,0.9);
       border-radius: 0.5rem;
       box-shadow: 0 2px 6px rgba(0,0,0,0.15);
@@ -73,7 +77,14 @@
     /* Content containers */
     .container { width: 100%; max-width: none; margin: auto; padding: 10px 40px; }
 
-    .project, .skills, .contact { background: white; padding: 25px; margin-bottom: 30px; border-left: 6px solid #1e88e5; box-shadow: 0 2px 4px rgba(0,0,0,0.1),0 6px 20px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; }
+    .project, .skills, .contact {
+      background: white;
+      padding: 25px;
+      margin-bottom: 30px;
+      border-left: 6px solid #1e88e5;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1),0 6px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
     .project:hover, .skills:hover, .contact:hover { transform: translateY(-5px); box-shadow: 0 4px 8px rgba(0,0,0,0.2),0 12px 24px rgba(0,0,0,0.15); }
 
     h2 { color: #0d47a1; border-bottom: 2px solid #90caf9; padding-bottom: 5px; margin-bottom: 10px; }
@@ -138,14 +149,4 @@
 
     <h2 id="contact">📬 Contact</h2>
     <div class="contact">
-      <p>Email: your.email@example.com</p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/YOURPROFILE" target="_blank">linkedin.com/in/YOURPROFILE</a></p>
-    </div>
-  </div>
-
-  <script>
-    /* Falling digits */
-    const stream = document.getElementById('digit-stream');
-    const count = Math.floor(window.innerWidth / 20);
-    function randomColor(){const letters='0123456789ABCDEF';return '#'+Array.from({length:6},()=>letters[Math.floor(Math.random()*16)]).join('');}
-    function createDigit(x){const digit=document.createElement('div');digit.className='digit';digit.style.left=`${x}px`;digit.style.animationDuration=`${2+Math.random()*4}s`;digit.style.color=randomColor();digit.textContent=Math.floor(Math.random()*10);setInterval(()=>{digit.textContent=Math.floor(Math.random()*10);digit.style.color
+      <p>Email: your.email@example.com
