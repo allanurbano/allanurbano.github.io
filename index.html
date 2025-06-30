@@ -211,8 +211,8 @@
   <section id="powerbi-dashboard">
     <h3>Interactive Power BI Dashboard</h3>
     <div class="iframe-container">
-      <!-- Replace the src with your actual published Power BI report link -->
-      <iframe src="https://app.powerbi.com/view?r=YOUR_REPORT_ID_HERE" allowfullscreen></iframe>
+      <iframe title="skills_github" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiZDE0ZmI0OWQtN2UyMS00NDYyLTkzZTktODA2YWU3Y2Y0OGU2IiwidCI6ImJlMDk2MGUyLWNmMjEtNDE2Yi1hMzZjLTExMTI1MmZiNDU3ZCIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
+      <iframe src="https://app.powerbi.com/view?r=YOUR_REPORT_ID_HERE" allowFullScreen></iframe>
     </div>
   </section>
 
@@ -240,47 +240,3 @@
     <div class="contact-links">
       <a href="mailto:allan.urbano@example.com">Email</a>
       <a href="https://www.linkedin.com/in/allanurbano/" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-  </section>
-
-  <footer>
-    © <span id="year"></span> Allan Urbano — All rights reserved.
-  </footer>
-
-  <script>
-    /* Falling numbers animation */
-    const numbersContainer = document.getElementById('numbers');
-    const totalNumbers = 80;
-
-    for (let i = 0; i < totalNumbers; i++) {
-      const span = document.createElement('span');
-      span.textContent = Math.floor(Math.random() * 10);
-      span.style.left = `${Math.random() * 100}vw`;
-      span.style.fontSize = `${0.75 + Math.random() * 1.5}rem`;
-      span.style.opacity = 0.2 + Math.random() * 0.6;
-      span.style.setProperty('--dur', `${8 + Math.random() * 10}s`);
-      numbersContainer.appendChild(span);
-    }
-
-    /* Update footer year */
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    /* Highlight active legend link */
-    const sections = document.querySelectorAll('section');
-    const legendLinks = document.querySelectorAll('.legend a');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          legendLinks.forEach(link => {
-            const targetId = link.getAttribute('href').substring(1);
-            link.classList.toggle('active', targetId === entry.target.id);
-          });
-        }
-      });
-    }, { rootMargin: '-30% 0px -50% 0px', threshold: 0 });
-
-    sections.forEach(section => observer.observe(section));
-  </script>
-</body>
-</html>
