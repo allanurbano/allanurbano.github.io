@@ -6,115 +6,52 @@
   <title>All Ur Analytics | SQL Data Analyst Portfolio</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'Segoe UI', Tahoma, sans-serif;
       background-color: #f4f6f8;
       color: #212121;
-      padding-top: 230px; /* offset for fixed header including nav */
+      padding-top: 230px;
     }
-
-    /* Header (fixed) */
+    /* Header */
     header {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: linear-gradient(135deg, #002f6c, #0d47a1, #2196f3);
-      color: white;
-      padding: 40px 20px 20px; /* bottom padding adjusted for nav */
-      text-align: center;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      z-index: 1100;
+      top: 0; left: 0; width: 100%;
+      background: linear-gradient(135deg,#002f6c,#0d47a1,#2196f3);
+      color:#fff; padding:40px 20px 20px; text-align:center; overflow:hidden;
+      box-shadow:0 4px 10px rgba(0,0,0,.2); z-index:1100;
     }
-
-    header h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-      position: relative;
-      z-index: 2;
-      transform: perspective(800px) rotateX(5deg);
-      text-shadow:
-        0 1px 0 #ccc,
-        0 2px 0 #c9c9c9,
-        0 3px 0 #bbb,
-        0 4px 0 #999,
-        0 5px 0 #777,
-        0 6px 0 #555,
-        0 7px 3px rgba(0,0,0,0.4);
-    }
-
-    header p { font-size: 1.15em; font-weight: 500; position: relative; z-index: 2; }
-    header p strong { color: #ffee58; }
-
-    /* Navigation legend inside header aligned left */
-    nav.legend {
-      margin-top: 18px;
-      margin-left: 20px;
-      display: flex;
-      justify-content: flex-start;
-      gap: 1.5rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    nav.legend a {
-      color: #ffee58;
-      font-size: 0.95rem;
-      text-decoration: none;
-      font-weight: 600;
-      transition: opacity 0.25s;
-    }
-    nav.legend a:hover { opacity: 0.8; text-decoration: underline; }
-    nav.legend a.active { color: #ffffff; text-decoration: underline; }
-
-    @media(max-width: 700px){ nav.legend{flex-wrap: wrap; gap:0.75rem; margin-left:10px;} }
-
-    /* Falling digits */
-    .digit-stream { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
-    .digit { position: absolute; font-family: monospace; font-size: 2em; opacity: 0.9; animation: fall linear infinite; user-select: none; transform: translateZ(0) rotateX(30deg); text-shadow: 0 0 6px rgba(255,255,255,0.9), 1px 1px 3px rgba(0,0,0,0.4);}    
-    @keyframes fall { 0%{top:-100px;opacity:0;} 10%{opacity:1;} 100%{top:110%;opacity:0;} }
-
-    /* Content containers */
-    .container { width: 100%; max-width: none; margin: auto; padding: 10px 40px; }
-
-    .project, .skills, .contact {
-      background: white;
-      padding: 25px;
-      margin-bottom: 30px;
-      border-left: 6px solid #1e88e5;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1),0 6px 20px rgba(0,0,0,0.08);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .project:hover, .skills:hover, .contact:hover { transform: translateY(-5px); box-shadow: 0 4px 8px rgba(0,0,0,0.2),0 12px 24px rgba(0,0,0,0.15); }
-
-    h2 { color: #0d47a1; border-bottom: 2px solid #90caf9; padding-bottom: 5px; margin-bottom: 10px; }
-    a { color: #0d47a1; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    ul { padding-left: 20px; }
-    .project h3 { font-size: 1em; color: #0d47a1; margin-bottom: 4px; }
+    header h1 {font-size:3em;margin-bottom:10px;position:relative;z-index:2;transform:perspective(800px) rotateX(5deg);text-shadow:0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #999,0 5px 0 #777,0 6px 0 #555,0 7px 3px rgba(0,0,0,.4);}
+    header p{font-size:1.15em;font-weight:500;position:relative;z-index:2;} header p strong{color:#ffee58;}
+    nav.legend{margin-top:18px;margin-left:20px;display:flex;gap:1.5rem;justify-content:flex-start;position:relative;z-index:2;}
+    nav.legend a{color:#ffee58;font-size:.95rem;text-decoration:none;font-weight:600;transition:opacity .25s;} nav.legend a:hover{text-decoration:underline;opacity:.8}
+    @media(max-width:700px){nav.legend{flex-wrap:wrap;gap:.75rem;margin-left:10px;}}
+    .digit-stream{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1}
+    .digit{position:absolute;font-family:monospace;font-size:2em;opacity:.9;animation:fall linear infinite;user-select:none;transform:translateZ(0) rotateX(30deg);text-shadow:0 0 6px rgba(255,255,255,.9),1px 1px 3px rgba(0,0,0,.4)}
+    @keyframes fall{0%{top:-100px;opacity:0}10%{opacity:1}100%{top:110%;opacity:0}}
+    .container{max-width:none;width:100%;margin:auto;padding:10px 40px}
+    .project{background:#fff;padding:25px;margin-bottom:30px;border-left:6px solid #1e88e5;box-shadow:0 2px 4px rgba(0,0,0,.1),0 6px 20px rgba(0,0,0,.08);transition:.3s}
+    .project:hover{transform:translateY(-5px);box-shadow:0 4px 8px rgba(0,0,0,.2),0 12px 24px rgba(0,0,0,.15)}
+    h2{color:#0d47a1;border-bottom:2px solid #90caf9;padding-bottom:5px;margin-bottom:10px}
+    a{color:#0d47a1;text-decoration:none} a:hover{text-decoration:underline}
   </style>
 </head>
 <body>
-
   <header>
     <h1>All Ur Analytics</h1>
     <p>by <strong>Allan Urbano</strong> • SQL Data Analyst • Insight Builder • Problem Solver</p>
-    <nav class="legend" aria-label="Page sections">
-      <a href="#featured-project">Project</a>
-      <a href="#powerbi">Dashboard</a>
-      <a href="#skills">Skills</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
+    <nav class="legend" aria-label="Site pages">
+      <a href="index.html">Project</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="skills.html">Skills</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html">Contact</a>
     </nav>
     <div class="digit-stream" id="digit-stream"></div>
   </header>
 
   <div class="container">
-    <h2 id="featured-project">📁 Featured Project</h2>
+    <h2>📁 Featured Project</h2>
     <div class="project">
       <h3 style="color:black;">Job Market Analysis using SQL</h3>
       <p>Used SQL to analyze job listing data and uncover high-demand skills, job title trends, and regional hiring behavior.</p>
@@ -125,39 +62,14 @@
       </ul>
       <p>🔗 <a href="https://allanurbano.github.io/sql-job-market-analysis/" target="_blank">View Project</a> | <a href="https://github.com/allanurbano/SQL_Project_Data_Job_Analysis" target="_blank">View Source Code</a></p>
     </div>
-
-    <h2 id="powerbi">📊 Power BI Visualization</h2>
-    <div class="project">
-      <p>Interactive dashboard built from SQL analysis of job postings.</p>
-      <div style="overflow-x:auto;">
-        <iframe title="skills_github" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiZDE0ZmI0OWQtN2UyMS00NDYyLTkzZTktODA2YWU3Y2Y0OGU2IiwidCI6ImJlMDk2MGUyLWNmMjEtNDE2Yi1hMzZjLTExMTI1MmZiNDU3ZCIsImMiOjEwfQ%3D%3D" frameborder="0" allowfullscreen="true"></iframe>
-      </div>
-    </div>
-
-    <h2 id="skills">🛠 Technical Skills</h2>
-    <div class="skills">
-      <ul>
-        <li><strong>SQL:</strong> Joins, Subqueries, CTEs, Aggregation, Filtering</li>
-        <li><strong>Excel:</strong> Pivot tables, Lookups, Conditional logic</li>
-        <li><strong>Data Viz:</strong> Power BI (in progress), Tableau (basic)</li>
-        <li><strong>Python:</strong> pandas, matplotlib (beginner level)</li>
-      </ul>
-    </div>
-
-    <h2 id="resume">📄 Resume</h2>
-    <div class="project"><p><a href="allan_urbano_resume.pdf" target="_blank">Download My Resume (PDF)</a></p></div>
-
-    <h2 id="contact">📬 Contact</h2>
-    <div class="contact">
-      <p>Email: your.email@example.com</p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/YOURPROFILE" target="_blank">linkedin.com/in/YOURPROFILE</a></p>
-    </div>
   </div>
 
   <script>
-    /* Falling digits animation */
-    const stream = document.getElementById('digit-stream');
-    const count = Math.floor(window.innerWidth / 20);
-
-    function randomColor() {
-      const letters = '
+    // Falling digits
+    const stream=document.getElementById('digit-stream');
+    const total=Math.floor(window.innerWidth/20);
+    function randColor(){const l='0123456789ABCDEF';return '#'+Array.from({length:6},()=>l[Math.floor(Math.random()*16)]).join('');}
+    for(let i=0;i<total;i++){const d=document.createElement('div');d.className='digit';d.style.left=`${i*20}px`;d.style.animationDuration=`${2+Math.random()*4}s`;d.style.color=randColor();d.textContent=Math.floor(Math.random()*10);setInterval(()=>{d.textContent=Math.floor(Math.random()*10);d.style.color=randColor();},500+Math.random()*1000);stream.appendChild(d);}  
+  </script>
+</body>
+</html>
