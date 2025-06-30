@@ -7,14 +7,14 @@
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{font-family:'Segoe UI',Tahoma,sans-serif;background:#f4f6f8;color:#212121;padding-top:230px}
+    body{font-family:'Segoe UI',Tahoma,sans-serif;background:#f4f6f8;color:#212121;padding-top:220px}
     /* fixed header */
-    header{position:fixed;top:0;left:0;width:100%;background:linear-gradient(135deg,#002f6c,#0d47a1,#2196f3);color:#fff;padding:40px 20px 20px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,.2);z-index:1100;text-align:center}
+    header{position:fixed;top:0;left:0;width:100%;background:linear-gradient(135deg,#002f6c,#0d47a1,#2196f3);color:#fff;padding:40px 20px 10px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,.2);z-index:1100;text-align:center}
     header h1{font-size:3em;margin-bottom:10px;transform:perspective(800px) rotateX(5deg);text-shadow:0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #999,0 5px 0 #777,0 6px 0 #555,0 7px 3px rgba(0,0,0,.4)}
     header p{font-size:1.15em;font-weight:500}
     header p strong{color:#ffee58}
     /* nav legend */
-    nav.legend{margin-top:18px;margin-left:20px;display:flex;gap:1.5rem;justify-content:flex-start}
+    nav.legend{margin-top:10px;margin-left:20px;margin-bottom:0;display:flex;gap:1rem;justify-content:flex-start}
     nav.legend a{color:#ffee58;font-size:.95rem;font-weight:600;text-decoration:none;transition:opacity .25s}
     nav.legend a:hover{text-decoration:underline;opacity:.8}
     /* raining digits */
@@ -22,7 +22,7 @@
     .digit{position:absolute;font-family:monospace;font-size:2em;opacity:.9;animation:fall linear infinite;user-select:none;transform:translateZ(0) rotateX(30deg);text-shadow:0 0 6px rgba(255,255,255,.9),1px 1px 3px rgba(0,0,0,.4)}
     @keyframes fall{0%{top:-100px;opacity:0}10%{opacity:1}100%{top:110%;opacity:0}}
     /* sections */
-    section{scroll-margin-top:240px;}
+    section{scroll-margin-top:220px}
     .container{width:100%;padding:10px 40px}
     .block{background:#fff;padding:25px;margin-bottom:30px;border-left:6px solid #1e88e5;box-shadow:0 2px 4px rgba(0,0,0,.1),0 6px 20px rgba(0,0,0,.08);transition:.3s}
     .block:hover{transform:translateY(-5px);box-shadow:0 4px 8px rgba(0,0,0,.2),0 12px 24px rgba(0,0,0,.15)}
@@ -121,12 +121,4 @@
       const d=document.createElement('div');
       d.className='digit';
       d.style.left=`${i*20}px`;
-      d.style.animationDuration=`${2+Math.random()*4}s`;
-      d.style.color=randCol();
-      d.textContent=Math.floor(Math.random()*10);
-      setInterval(()=>{d.textContent=Math.floor(Math.random()*10);d.style.color=randCol();},500+Math.random()*1000);
-      stream.appendChild(d);
-    }
-  </script>
-</body>
-</html>
+      d.style.animationDuration=`
