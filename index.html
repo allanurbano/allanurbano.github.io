@@ -9,25 +9,25 @@
     html{scroll-behavior:smooth}
     body{font-family:'Segoe UI',Tahoma,sans-serif;background:#f4f6f8;color:#212121;padding-top:230px}
     /* Header */
-    header{position:fixed;top:0;left:0;width:100%;background:linear-gradient(135deg,#002f6c,#0d47a1,#2196f3);color:#fff;padding:30px 20px 10px;box-shadow:0 4px 10px rgba(0,0,0,.2);z-index:1100}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand img{height:46px;width:auto}
-    .title-wrap{display:flex;flex-direction:column;}
-    .title-wrap h1{font-size:1.8rem;letter-spacing:.5px;text-shadow:0 1px 3px rgba(0,0,0,.4)}
-    .title-wrap p{font-size:.95rem;font-weight:500;color:#ffee58;margin-top:2px}
+    header{position:fixed;top:0;left:0;width:100%;background:linear-gradient(135deg,#002f6c,#0d47a1,#2196f3);color:#fff;padding:30px 20px 8px;box-shadow:0 4px 10px rgba(0,0,0,.2);z-index:1100;text-align:center}
+    .brand{display:flex;align-items:center;justify-content:center;gap:14px}
+    .brand img{height:68px;width:auto}
+    .title-wrap{display:flex;flex-direction:column;align-items:flex-start}
+    .title-wrap h1{font-size:2rem;letter-spacing:.5px;text-shadow:0 1px 3px rgba(0,0,0,.4)}
+    .title-wrap p{font-size:1rem;font-weight:500;color:#ffee58;margin-top:2px}
     /* Nav */
-    nav.legend{margin-top:8px;display:flex;gap:1rem;flex-wrap:wrap}
-    nav.legend a{color:#ffee58;font-size:.9rem;font-weight:600;text-decoration:none}
+    nav.legend{margin-top:10px;display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+    nav.legend a{color:#ffee58;font-size:.95rem;font-weight:600;text-decoration:none}
     nav.legend a:hover{text-decoration:underline;opacity:.85}
     /* Raining digits */
     .digit-stream{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1}
     .digit{position:absolute;font-family:monospace;font-size:1.6rem;opacity:.85;animation:fall linear infinite;text-shadow:0 0 6px rgba(255,255,255,.9),1px 1px 3px rgba(0,0,0,.4)}
     @keyframes fall{0%{top:-120px;opacity:0}10%{opacity:1}100%{top:110%;opacity:0}}
     /* Layout */
-    .container{max-width:950px;margin:auto;padding:20px}
-    section{scroll-margin-top:220px;margin-bottom:40px}
-    h2{color:#0d47a1;border-bottom:2px solid #90caf9;padding-bottom:4px;margin-bottom:12px;font-size:1.3rem}
-    .block{background:#fff;padding:20px;border-left:6px solid #1e88e5;box-shadow:0 2px 4px rgba(0,0,0,.08)}
+    .container{max-width:900px;margin:auto;padding:12px}
+    section{scroll-margin-top:220px;margin-bottom:36px}
+    h2{color:#0d47a1;border-bottom:2px solid #90caf9;padding-bottom:4px;margin-bottom:10px;font-size:1.3rem}
+    .block{background:#fff;padding:18px;border-left:6px solid #1e88e5;box-shadow:0 2px 4px rgba(0,0,0,.08)}
     .block:hover{transform:translateY(-4px);box-shadow:0 4px 8px rgba(0,0,0,.15)}
     a{color:#0d47a1}
     a:hover{text-decoration:underline}
@@ -80,13 +80,13 @@
           <li>Calculated frequency of tech skills across thousands of postings</li>
           <li>Leveraged subqueries & aggregation for crisp insights</li>
         </ul>
-        <p>🔗 <a href="https://allanurbano.github.io/sql-job-market-analysis/" target="_blank">Project</a> • <a href="https://github.com/allanurbano/SQL_Project_Data_Job_Analysis" target="_blank">Source Code</a></p>
+        <p>🔗 <a href="https://allanurbano.github.io/sql-job-market-analysis/" target="_blank">Project</a> • <a href="https://github.com/allanurbano/SQL_Project_Data_Job_Analysis" target="_blank">Source Code</a></p>
       </div>
     </section>
 
     <!-- Dashboard -->
     <section id="dashboard">
-      <h2>📊 Power BI Visualization</h2>
+      <h2>📊 Power BI Visualization</h2>
       <div class="block">
         <p>Interactive dashboard powered by the SQL analysis above.</p>
         <div style="overflow-x:auto"><iframe title="skills_github" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiZDE0ZmI0OWQtN2UyMS00NDYyLTkzZTktODA2YWU3Y2Y0OGU2IiwidCI6ImJlMDk2MGUyLWNmMjEtNDE2Yi1hMzZjLTExMTI1MmZiNDU3ZCIsImMiOjEwfQ%3D%3D" frameborder="0" allowfullscreen></iframe></div>
@@ -100,8 +100,8 @@
         <ul>
           <li><strong>SQL:</strong> joins, CTEs, window functions, optimization</li>
           <li><strong>Excel:</strong> pivots, lookups, dynamic arrays</li>
-          <li><strong>Data Viz:</strong> Power BI, Tableau (basic)</li>
-          <li><strong>Python:</strong> pandas, matplotlib (beginner)</li>
+          <li><strong>Data Viz:</strong> Power BI, Tableau (basic)</li>
+          <li><strong>Python:</strong> pandas, matplotlib (beginner)</li>
         </ul>
       </div>
     </section>
@@ -123,19 +123,19 @@
   </div>
 
   <script>
-    /* Falling digits */
     const stream=document.getElementById('digit-stream');
     const cols=Math.floor(window.innerWidth/22);
-    function randColor(){return'#'+[...Array(6)].map(()=>('0123456789ABCDEF')[Math.floor(Math.random()*16)]).join('');}
+    const HEX='0123456789ABCDEF';
+    const randColor=()=>'#'+Array.from({length:6},()=>HEX[Math.floor(Math.random()*16)]).join('');
     for(let i=0;i<cols;i++){
       const d=document.createElement('div');
       d.className='digit';
       d.style.left=`${i*22}px`;
       d.style.animationDuration=`${3+Math.random()*4}s`;
       stream.appendChild(d);
-      setInterval(()=>{d.textContent=Math.floor(Math.random()*10);d.style.color=randColor();},500+Math.random()*700);
-      d.textContent=Math.floor(Math.random()*10);
-      d.style.color=randColor();
+      const mutate=()=>{d.textContent=Math.floor(Math.random()*10);d.style.color=randColor();};
+      mutate();
+      setInterval(mutate,500+Math.random()*700);
     }
   </script>
 </body>
