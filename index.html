@@ -16,7 +16,7 @@
     .title-wrap h1{font-size:2rem;letter-spacing:.5px;text-shadow:0 1px 3px rgba(0,0,0,.4)}
     .title-wrap p{font-size:1rem;font-weight:500;color:#ffee58;margin-top:2px}
     /* Nav */
-    nav.legend{margin-top:8px;display:flex;gap:.9rem;flex-wrap:wrap;justify-content:center}
+    nav.legend{margin-top:8px;display:flex;gap:.9rem;flex-wrap:wrap;justify-content:flex-start;margin-left:20px}
     nav.legend a{color:#ffee58;font-size:.9rem;font-weight:600;text-decoration:none}
     nav.legend a:hover{text-decoration:underline;opacity:.85}
     /* Raining digits */
@@ -124,17 +124,20 @@
 
   <script>
     const stream=document.getElementById('digit-stream');
-    const cols=Math.floor(window.innerWidth/22);
-    const HEX='0123456789ABCDEF';
-    function randColor(){return'#'+Array.from({length:6},()=>HEX[Math.floor(Math.random()*16)]).join('');}
-    function createDigit(x){
+    const columns=Math.floor(window.innerWidth/22);
+    const hex='0123456789ABCDEF';
+    const randCol=()=>'#'+Array.from({length:6},()=>hex[Math.floor(Math.random()*16)]).join('');
+    function addDigit(x){
       const d=document.createElement('div');
       d.className='digit';
       d.style.left=`${x}px`;
       d.style.animationDuration=`${3+Math.random()*4}s`;
       stream.appendChild(d);
-      const mutate=()=>{d.textContent=Math.floor(Math.random()*10);d.style.color=randColor();};
+      const mutate=()=>{d.textContent=Math.floor(Math.random()*10);d.style.color=randCol();};
       mutate();
-      setInterval(mutate,700+Math.random()*800);
+      setInterval(mutate,600+Math.random()*800);
     }
-    for(let i
+    for(let i=0;i<columns;i++){addDigit(i*22);}    
+  </script>
+</body>
+</html>
