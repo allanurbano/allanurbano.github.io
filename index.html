@@ -24,7 +24,7 @@
     .digit{position:absolute;font-family:monospace;font-size:1.6rem;opacity:.85;animation:fall linear infinite;text-shadow:0 0 6px rgba(255,255,255,.9),1px 1px 3px rgba(0,0,0,.4)}
     @keyframes fall{0%{top:-120px;opacity:0}10%{opacity:1}100%{top:110%;opacity:0}}
     /* Layout */
-    .container{max-width:1050px;margin:auto;padding:4px}
+    .container{width:80%;max-width:none;margin:0 auto;padding:4px}
     section{scroll-margin-top:220px;margin-bottom:32px}
     h2{color:#0d47a1;border-bottom:2px solid #90caf9;padding-bottom:4px;margin-bottom:8px;font-size:1.28rem}
     .block{background:#fff;padding:16px;border-left:6px solid #1e88e5;box-shadow:0 2px 4px rgba(0,0,0,.08)}
@@ -126,10 +126,15 @@
     const stream=document.getElementById('digit-stream');
     const cols=Math.floor(window.innerWidth/22);
     const HEX='0123456789ABCDEF';
-    const randColor=()=>'#'+[...Array(6)].map(()=>HEX[Math.floor(Math.random()*16)]).join('');
-    for(let i=0;i<cols;i++){
+    function randColor(){return'#'+Array.from({length:6},()=>HEX[Math.floor(Math.random()*16)]).join('');}
+    function createDigit(x){
       const d=document.createElement('div');
       d.className='digit';
-      d.style.left=`${i*22}px`;
+      d.style.left=`${x}px`;
       d.style.animationDuration=`${3+Math.random()*4}s`;
-      stream.appendChild
+      stream.appendChild(d);
+      const mutate=()=>{d.textContent=Math.floor(Math.random()*10);d.style.color=randColor();};
+      mutate();
+      setInterval(mutate,700+Math.random()*800);
+    }
+    for(let i
