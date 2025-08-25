@@ -1,63 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>All Ur Analytics - by Allan Urbano</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Ur Analytics - Portfolio</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom right, #1e3c72, #2a5298);
-      color: #fff;
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: white;
+      text-align: center;
     }
     header {
-      text-align: center;
       padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     }
     header h1 {
+      margin: 0;
       font-size: 2.5rem;
-      margin-bottom: 0.5rem;
     }
     header p {
+      margin: 0;
       font-size: 1.2rem;
-      color: #ddd;
     }
     section {
-      padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
+      padding: 3rem 1rem;
     }
     h2 {
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin-bottom: 1rem;
-      border-bottom: 2px solid #fff;
-      display: inline-block;
-      padding-bottom: 0.5rem;
     }
-    .block {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 1.5rem;
-      margin: 1.5rem 0;
+    .card {
+      background: rgba(255,255,255,0.1);
       border-radius: 1rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      padding: 2rem;
+      margin: 1rem auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      max-width: 800px;
     }
     iframe {
-      width: 100%;
-      height: 60vh;
-      border: none;
       border-radius: 0.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
     ul {
-      line-height: 1.8;
+      list-style: none;
+      padding: 0;
     }
-    a {
-      color: #ffd700;
+    li {
+      margin: 0.5rem 0;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background: #fff;
+      color: #2a5298;
+      border-radius: 2rem;
       text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
-    a:hover {
-      text-decoration: underline;
+    a.button:hover {
+      background: #f0f0f0;
     }
   </style>
 </head>
@@ -69,57 +74,59 @@
 
   <!-- Featured Project -->
   <section id="projects">
-    <h2>Featured SQL Project</h2>
-    <div class="block">
-      <p><a href="https://github.com/djindarth/SQL_Project_Data_Job_Analysis" target="_blank">SQL Project: Data Job Analysis</a></p>
+    <h2>⭐ Featured SQL Project</h2>
+    <div class="card">
+      <p>Check out my SQL project analyzing data jobs on GitHub:</p>
+      <a class="button" href="https://github.com/djindarth/SQL_Project_Data_Job_Analysis" target="_blank">View on GitHub</a>
     </div>
   </section>
 
   <!-- Dashboard -->
   <section id="dashboard">
     <h2>📊 Power BI Visualizations</h2>
-    <div class="block">
+    <div class="card">
       <p>Interactive dashboards powered by the SQL analysis above.</p>
-      <div>
-        <iframe title="skills_github" 
+      <div style="overflow-x:auto;margin-bottom:20px">
+        <iframe title="skills_github" width="600" height="373.5" 
           src="https://app.powerbi.com/view?r=eyJrIjoiZDE0ZmI0OWQtN2UyMS00NDYyLTkzZTktODA2YWU3Y2Y0OGU2IiwidCI6ImJlMDk2MGUyLWNmMjEtNDE2Yi1hMzZjLTExMTI1MmZiNDU3ZCIsImMiOjEwfQ%3D%3D" 
-          allowFullScreen="true"></iframe>
+          frameborder="0" allowFullScreen="true"></iframe>
       </div>
-      <div>
-        <iframe title="absentdata" 
+      <div style="overflow-x:auto">
+        <iframe title="absentdata" width="600" height="373.5" 
           src="https://app.powerbi.com/view?r=eyJrIjoiNDY0YzJiYjgtMjhlNS00MzNjLTkxZjctMzY2YjQzM2UzZmVkIiwidCI6ImU1MDc3ZmJmLTJmYmQtNDNiOS1iZjgyLTUyMTc3OWJiMTM3OSIsImMiOjEwfQ%3D%3D" 
-          allowFullScreen="true"></iframe>
+          frameborder="0" allowFullScreen="true"></iframe>
       </div>
     </div>
   </section>
 
   <!-- Skills -->
   <section id="skills">
-    <h2>Technical Skills</h2>
-    <div class="block">
+    <h2>🛠 Technical Skills</h2>
+    <div class="card">
       <ul>
-        <li>SQL (Data Analysis, Joins, Window Functions)</li>
-        <li>Power BI (Dashboards, Data Modeling, Visualization)</li>
-        <li>Excel (Pivot Tables, VBA, Advanced Formulas)</li>
-        <li>Python (Pandas, Data Cleaning)</li>
+        <li>SQL & Database Management</li>
+        <li>Power BI & Data Visualization</li>
+        <li>Python for Data Analysis</li>
+        <li>ETL Processes</li>
+        <li>Data Cleaning & Transformation</li>
       </ul>
     </div>
   </section>
 
   <!-- Resume -->
   <section id="resume">
-    <h2>Resume</h2>
-    <div class="block">
-      <p><a href="resume.pdf" target="_blank">📄 Download My Resume</a></p>
+    <h2>📄 Resume</h2>
+    <div class="card">
+      <a class="button" href="resume.pdf" target="_blank">Download Resume</a>
     </div>
   </section>
 
   <!-- Contact -->
   <section id="contact">
-    <h2>Contact</h2>
-    <div class="block">
+    <h2>📬 Contact</h2>
+    <div class="card">
       <p>Email: <a href="mailto:allanurbano@example.com">allanurbano@example.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/allanurbano" target="_blank">linkedin.com/in/allanurbano</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/allan-urbano/" target="_blank">linkedin.com/in/allan-urbano</a></p>
     </div>
   </section>
 </body>
