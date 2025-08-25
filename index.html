@@ -1,47 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>All Ur Analytics - Portfolio</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #1e3c72, #2a5298);
+      background: linear-gradient(to bottom right, #1e3c72, #2a5298);
       color: white;
       text-align: center;
     }
     header {
       padding: 2rem;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
     header h1 {
-      margin: 0;
       font-size: 2.5rem;
+      margin: 0;
     }
     header p {
-      margin: 0;
+      margin: 0.5rem 0 0;
       font-size: 1.2rem;
     }
     section {
-      padding: 3rem 1rem;
+      padding: 2rem;
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      max-width: 900px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
     h2 {
-      font-size: 2rem;
+      font-size: 1.8rem;
       margin-bottom: 1rem;
-    }
-    .card {
-      background: rgba(255,255,255,0.1);
-      border-radius: 1rem;
-      padding: 2rem;
-      margin: 1rem auto;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-      max-width: 800px;
-    }
-    iframe {
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
     ul {
       list-style: none;
@@ -50,19 +43,16 @@
     li {
       margin: 0.5rem 0;
     }
-    a.button {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.75rem 1.5rem;
-      background: #fff;
-      color: #2a5298;
-      border-radius: 2rem;
+    a {
+      color: #ffd700;
       text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
-    a.button:hover {
-      background: #f0f0f0;
+    a:hover {
+      text-decoration: underline;
+    }
+    iframe {
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
     }
   </style>
 </head>
@@ -72,62 +62,55 @@
     <p>by Allan Urbano</p>
   </header>
 
-  <!-- Featured Project -->
-  <section id="projects">
-    <h2>⭐ Featured SQL Project</h2>
-    <div class="card">
-      <p>Check out my SQL project analyzing data jobs on GitHub:</p>
-      <a class="button" href="https://github.com/djindarth/SQL_Project_Data_Job_Analysis" target="_blank">View on GitHub</a>
-    </div>
+  <section id="sql-project">
+    <h2>📂 Featured SQL Project</h2>
+    <p>
+      Explore my SQL project analyzing data job trends:
+      <a href="https://github.com/djindarth/SQL_Project_Data_Job_Analysis" target="_blank">View on GitHub</a>
+    </p>
   </section>
 
-  <!-- Dashboard -->
   <section id="dashboard">
     <h2>📊 Power BI Visualizations</h2>
-    <div class="card">
-      <p>Interactive dashboards powered by the SQL analysis above.</p>
-      <div style="overflow-x:auto;margin-bottom:20px">
-        <iframe title="skills_github" width="600" height="373.5" 
-          src="https://app.powerbi.com/view?r=eyJrIjoiZDE0ZmI0OWQtN2UyMS00NDYyLTkzZTktODA2YWU3Y2Y0OGU2IiwidCI6ImJlMDk2MGUyLWNmMjEtNDE2Yi1hMzZjLTExMTI1MmZiNDU3ZCIsImMiOjEwfQ%3D%3D" 
-          frameborder="0" allowFullScreen="true"></iframe>
-      </div>
-      <div style="overflow-x:auto">
-        <iframe title="absentdata" width="600" height="373.5" 
-          src="https://app.powerbi.com/view?r=eyJrIjoiNDY0YzJiYjgtMjhlNS00MzNjLTkxZjctMzY2YjQzM2UzZmVkIiwidCI6ImU1MDc3ZmJmLTJmYmQtNDNiOS1iZjgyLTUyMTc3OWJiMTM3OSIsImMiOjEwfQ%3D%3D" 
-          frameborder="0" allowFullScreen="true"></iframe>
-      </div>
+    <p>Interactive dashboards powered by SQL analysis</p>
+    
+    <!-- First Power BI Report -->
+    <div style="overflow-x:auto; margin-bottom:20px;">
+      <iframe title="skills_github" width="600" height="373.5" 
+        src="https://app.powerbi.com/view?r=eyJrIjoiZDE0ZmI0OWQtN2UyMS00NDYyLTkzZTktODA2YWU3Y2Y0OGU2IiwidCI6ImJlMDk2MGUyLWNmMjEtNDE2Yi1hMzZjLTExMTI1MmZiNDU3ZCIsImMiOjEwfQ%3D%3D" 
+        frameborder="0" allowFullScreen="true"></iframe>
+    </div>
+
+    <!-- Second Power BI Report -->
+    <div style="overflow-x:auto;">
+      <iframe title="absentdata" width="600" height="373.5" 
+        src="https://app.powerbi.com/view?r=eyJrIjoiNDY0YzJiYjgtMjhlNS00MzNjLTkxZjctMzY2YjQzM2UzZmVkIiwidCI6ImU1MDc3ZmJmLTJmYmQtNDNiOS1iZjgyLTUyMTc3OWJiMTM3OSIsImMiOjEwfQ%3D%3D" 
+        frameborder="0" allowFullScreen="true"></iframe>
     </div>
   </section>
 
-  <!-- Skills -->
   <section id="skills">
     <h2>🛠 Technical Skills</h2>
-    <div class="card">
-      <ul>
-        <li>SQL & Database Management</li>
-        <li>Power BI & Data Visualization</li>
-        <li>Python for Data Analysis</li>
-        <li>ETL Processes</li>
-        <li>Data Cleaning & Transformation</li>
-      </ul>
-    </div>
+    <ul>
+      <li>SQL (Advanced Queries, Joins, Optimization)</li>
+      <li>Power BI (Interactive Dashboards, Data Modeling)</li>
+      <li>Python (Pandas, Data Analysis, Automation)</li>
+      <li>Excel (Pivot Tables, VBA Macros, Data Cleaning)</li>
+      <li>Data Visualization & Storytelling</li>
+    </ul>
   </section>
 
-  <!-- Resume -->
   <section id="resume">
     <h2>📄 Resume</h2>
-    <div class="card">
-      <a class="button" href="resume.pdf" target="_blank">Download Resume</a>
-    </div>
+    <p>
+      <a href="Allan_Urbano_Resume.pdf" download>Download My Resume</a>
+    </p>
   </section>
 
-  <!-- Contact -->
   <section id="contact">
     <h2>📬 Contact</h2>
-    <div class="card">
-      <p>Email: <a href="mailto:allanurbano@example.com">allanurbano@example.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/allan-urbano/" target="_blank">linkedin.com/in/allan-urbano</a></p>
-    </div>
+    <p>Email: <a href="mailto:allan.urbano@example.com">allan.urbano@example.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/allanurbano" target="_blank">linkedin.com/in/allanurbano</a></p>
   </section>
 </body>
 </html>
