@@ -1,153 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All Ur Analytics | SQL Data Analyst Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Ur Analytics - by Allan Urbano</title>
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{font-family:'Segoe UI',Tahoma,sans-serif;background:#f4f6f8;color:#212121;padding-top:220px}
-    /* Header */
-    header{position:fixed;top:0;left:0;width:100%;background:linear-gradient(135deg,#002f6c,#0d47a1,#2196f3);color:#fff;padding:30px 20px 8px;box-shadow:0 4px 10px rgba(0,0,0,.2);z-index:1100;text-align:center}
-    .brand{display:flex;align-items:center;justify-content:center;gap:14px}
-    .brand img{height:88px;width:auto}
-    .title-wrap{display:flex;flex-direction:column;align-items:center;text-align:center}
-    .title-wrap h1{font-size:2rem;letter-spacing:.5px;text-shadow:0 1px 3px rgba(0,0,0,.4)}
-    .title-wrap p{font-size:1rem;font-weight:500;color:#ffee58;margin-top:2px}
-    /* Nav */
-    nav.legend{margin-top:8px;display:flex;gap:.9rem;flex-wrap:wrap;justify-content:flex-start;margin-left:20px}
-    nav.legend a{color:#ffee58;font-size:.9rem;font-weight:600;text-decoration:none}
-    nav.legend a:hover{text-decoration:underline;opacity:.85}
-    /* Raining digits */
-    .digit-stream{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1}
-    .digit{position:absolute;font-family:monospace;font-size:1.6rem;opacity:.85;animation:fall linear infinite;text-shadow:0 0 6px rgba(255,255,255,.9),1px 1px 3px rgba(0,0,0,.4)}
-    @keyframes fall{0%{top:-120px;opacity:0}10%{opacity:1}100%{top:110%;opacity:0}}
-    /* Layout */
-    .container{width:80%;max-width:none;margin:0 auto;padding:4px}
-    section{scroll-margin-top:220px;margin-bottom:32px}
-    h2{color:#0d47a1;border-bottom:2px solid #90caf9;padding-bottom:4px;margin-bottom:8px;font-size:1.28rem}
-    .block{background:#fff;padding:16px;border-left:6px solid #1e88e5;box-shadow:0 2px 4px rgba(0,0,0,.08)}
-    .block:hover{transform:translateY(-3px);box-shadow:0 4px 8px rgba(0,0,0,.15)}
-    a{color:#0d47a1}
-    a:hover{text-decoration:underline}
-    ul{padding-left:18px}
-    iframe{max-width:100%;height:auto}
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #1e3c72, #2a5298);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #ddd;
+    }
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #fff;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+    .block {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    iframe {
+      width: 100%;
+      height: 60vh;
+      border: none;
+      border-radius: 0.5rem;
+    }
+    ul {
+      line-height: 1.8;
+    }
+    a {
+      color: #ffd700;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="brand">
-      <img src="logo.png" alt="All Ur Analytics logo">
-      <div class="title-wrap">
-        <h1>All Ur Analytics</h1>
-        <p>SQL Data Analyst • Insight Builder • Problem Solver</p>
-      </div>
-    </div>
-    <nav class="legend" aria-label="Sections">
-      <a href="#about">About</a>
-      <a href="#featured">Project</a>
-      <a href="#dashboard">Dashboard</a>
-      <a href="#skills">Skills</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="digit-stream" id="digit-stream"></div>
+    <h1>All Ur Analytics</h1>
+    <p>by Allan Urbano</p>
   </header>
 
-  <div class="container">
-    <!-- About -->
-    <section id="about">
-      <h2>👤 About Me</h2>
-      <div class="block">
-        <p>Hello! I'm <strong>Allan Urbano</strong>, a data-driven professional who transforms raw numbers into actionable insights.</p>
-        <ul>
-          <li><strong>Analytical Mindset:</strong> uncovering patterns that power smarter decisions.</li>
-          <li><strong>Storytelling:</strong> translating complex findings into plain-language narratives.</li>
-          <li><strong>Lifelong Learner:</strong> sharpening Python and visualization chops daily.</li>
-          <li><strong>Problem Solver:</strong> delivering pragmatic solutions under tight timelines.</li>
-        </ul>
+  <!-- Featured Project -->
+  <section id="projects">
+    <h2>Featured SQL Project</h2>
+    <div class="block">
+      <p><a href="https://github.com/djindarth/SQL_Project_Data_Job_Analysis" target="_blank">SQL Project: Data Job Analysis</a></p>
+    </div>
+  </section>
+
+  <!-- Dashboard -->
+  <section id="dashboard">
+    <h2>📊 Power BI Visualizations</h2>
+    <div class="block">
+      <p>Interactive dashboards powered by the SQL analysis above.</p>
+      <div>
+        <iframe title="skills_github" 
+          src="https://app.powerbi.com/view?r=eyJrIjoiZDE0ZmI0OWQtN2UyMS00NDYyLTkzZTktODA2YWU3Y2Y0OGU2IiwidCI6ImJlMDk2MGUyLWNmMjEtNDE2Yi1hMzZjLTExMTI1MmZiNDU3ZCIsImMiOjEwfQ%3D%3D" 
+          allowFullScreen="true"></iframe>
       </div>
-    </section>
-
-    <!-- Featured Project -->
-    <section id="featured">
-      <h2>📁 Featured Project</h2>
-      <div class="block">
-        <h3>Job Market Analysis using SQL</h3>
-        <p>Analyzed job-listing data to reveal high-demand skills, emerging job titles, and regional hiring trends.</p>
-        <ul>
-          <li>Joined & cleaned multiple datasets</li>
-          <li>Calculated frequency of tech skills across thousands of postings</li>
-          <li>Leveraged subqueries & aggregation for crisp insights</li>
-        </ul>
-        <p>🔗 <a href="https://allanurbano.github.io/sql-job-market-analysis/" target="_blank">Project</a> • <a href="https://github.com/allanurbano/SQL_Project_Data_Job_Analysis" target="_blank">Source Code</a></p>
+      <div>
+        <iframe title="absentdata" 
+          src="https://app.powerbi.com/view?r=eyJrIjoiNDY0YzJiYjgtMjhlNS00MzNjLTkxZjctMzY2YjQzM2UzZmVkIiwidCI6ImU1MDc3ZmJmLTJmYmQtNDNiOS1iZjgyLTUyMTc3OWJiMTM3OSIsImMiOjEwfQ%3D%3D" 
+          allowFullScreen="true"></iframe>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Dashboard -->
-    <section id="dashboard">
-      <h2>📊 Power BI Visualizations</h2>
-      <div class="block">
-        <p>Interactive dashboards powered by the SQL analysis above.</p>
-        <div style="overflow-x:auto;margin-bottom:20px">
-          <iframe title="skills_github" width="600" height="373.5" 
-            src="https://app.powerbi.com/view?r=eyJrIjoiZDE0ZmI0OWQtN2UyMS00NDYyLTkzZTktODA2YWU3Y2Y0OGU2IiwidCI6ImJlMDk2MGUyLWNmMjEtNDE2Yi1hMzZjLTExMTI1MmZiNDU3ZCIsImMiOjEwfQ%3D%3D" 
-            frameborder="0" allowFullScreen="true"></iframe>
-        </div>
-        <div style="overflow-x:auto">
-          <iframe title="absentdata" width="600" height="373.5" 
-            src="https://app.powerbi.com/view?r=eyJrIjoiNDY0YzJiYjgtMjhlNS00MzNjLTkxZjctMzY2YjQzM2UzZmVkIiwidCI6ImU1MDc3ZmJmLTJmYmQtNDNiOS1iZjgyLTUyMTc3OWJiMTM3OSIsImMiOjEwfQ%3D%3D" 
-            frameborder="0" allowFullScreen="true"></iframe>
-        </div>
-      </div>
-    </section>
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <div class="block">
+      <ul>
+        <li>SQL (Data Analysis, Joins, Window Functions)</li>
+        <li>Power BI (Dashboards, Data Modeling, Visualization)</li>
+        <li>Excel (Pivot Tables, VBA, Advanced Formulas)</li>
+        <li>Python (Pandas, Data Cleaning)</li>
+      </ul>
+    </div>
+  </section>
 
-    <!-- Skills -->
-    <section id="skills">
-      <h2>🛠 Technical Skills</h2>
-      <div class="block">
-        <ul>
-          <li><strong>SQL:</strong> joins, CTEs, window functions, optimization</li>
-          <li><strong>Excel:</strong> pivots, lookups, dynamic arrays</li>
-          <li><strong>Data Viz:</strong> Power BI, Tableau (basic)</li>
-          <li><strong>Python:</strong> pandas, matplotlib (beginner)</li>
-        </ul>
-      </div>
-    </section>
+  <!-- Resume -->
+  <section id="resume">
+    <h2>Resume</h2>
+    <div class="block">
+      <p><a href="resume.pdf" target="_blank">📄 Download My Resume</a></p>
+    </div>
+  </section>
 
-    <!-- Resume -->
-    <section id="resume">
-      <h2>📄 Resume</h2>
-      <div class="block"><a href="allan_urbano_resume.pdf" target="_blank">Download My Resume (PDF)</a></div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <h2>📬 Contact</h2>
-      <div class="block">
-        <p>Email: your.email@example.com</p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/YOURPROFILE" target="_blank">linkedin.com/in/YOURPROFILE</a></p>
-      </div>
-    </section>
-  </div>
-
-  <script>
-    const stream=document.getElementById('digit-stream');
-    const columns=Math.floor(window.innerWidth/22);
-    const hex='0123456789ABCDEF';
-    const randCol=()=>'#'+Array.from({length:6},()=>hex[Math.floor(Math.random()*16)]).join('');
-    function addDigit(x){
-      const d=document.createElement('div');
-      d.className='digit';
-      d.style.left=`${x}px`;
-      d.style.animationDuration=`${3+Math.random()*4}s`;
-      stream.appendChild(d);
-      const mutate=()=>{d.textContent=Math.floor(Math.random()*10);d.style.color=randCol();};
-      mutate();
-      setInterval(mutate,600+Math.random()*800);
-    }
-    for(let i=0;i<columns;i++){addDigit(i*22);}    
-  </script>
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="block">
+      <p>Email: <a href="mailto:allanurbano@example.com">allanurbano@example.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/allanurbano" target="_blank">linkedin.com/in/allanurbano</a></p>
+    </div>
+  </section>
 </body>
 </html>
